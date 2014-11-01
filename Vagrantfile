@@ -29,6 +29,11 @@ config.vm.box = "centos6.5_base"
 config.vm.network "forwarded_port", guest: 3000, host: 13000
 config.vm.hostname = "vagrant.example.com"
 
+   config.vm.provider "virtualbox" do |vb| 
+     vb.customize ["modifyvm", :id, "--natdnsproxy1", "off"]
+     vb.customize ["modifyvm", :id, "--natdnshostresolver1", "off"]
+   end
+
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
