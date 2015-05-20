@@ -6,7 +6,7 @@ describe 'Triangle' do
   describe 'recognize an equilateral triangle' do
     context 'recognize arguments as equilateral triangle' do
       describe 'when three arguments are same value' do
-        let(:args) { ["3,", "3,", "3"] }
+        let(:args) { ["1,", "1,", "1"] }
         it { is_expected.to eq '正三角形ですね！' }
       end
     end
@@ -33,7 +33,7 @@ describe 'Triangle' do
 
     context 'does not recognize arguments as isosceles triangle' do
       describe 'when three arguments are same value' do
-        let(:args) { ["3,", "3,", "3"] }
+        let(:args) { ["1,", "1,", "1"] }
         it { is_expected.not_to eq '二等辺三角形ですね！' }
       end
       describe 'when all arguments are different value' do
@@ -53,7 +53,7 @@ describe 'Triangle' do
 
     context 'does not recognize arguments as isosceles triangle' do
       describe 'when three arguments are same value' do
-        let(:args) { ["3,", "3,", "3"] }
+        let(:args) { ["1,", "1,", "1"] }
         it { is_expected.not_to eq '不等辺三角形ですね！' }
       end
       describe 'when two arguments are same value' do
@@ -69,11 +69,15 @@ describe 'Triangle' do
         let(:args) { ["1,", "2,", "3"] }
         it { is_expected.to eq '三角形じゃないです＞＜' }
       end
+      describe 'when largest argument is equal to or larger than sum of other arguments' do
+        let(:args) { ["1,", "2,", "4"] }
+        it { is_expected.to eq '三角形じゃないです＞＜' }
+      end
     end
 
     context 'does not recognize arguments as non-triangle' do
       describe 'when largest argument is less than sum of other arguments' do
-        let(:args) { ["1,", "2,", "4"] }
+        let(:args) { ["1,", "2,", "2"] }
         it { is_expected.not_to eq '三角形じゃないです＞＜' }
       end
     end
