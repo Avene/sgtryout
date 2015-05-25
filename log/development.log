@@ -1,0 +1,103 @@
+  [1m[36m (22.3ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (11.5ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateEntries (20150521154355)
+  [1m[35m (2.7ms)[0m  CREATE TABLE `entries` (`id` int(11) auto_increment PRIMARY KEY, `title` varchar(255), `body` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150521154355')
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'hello_rails_development'
+  AND fk.table_name = 'entries'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `entries`
+
+
+Started GET "/" for 10.0.2.2 at 2015-05-21 15:51:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /usr/local/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/railties-4.2.1/lib/rails/templates/rails/welcome/index.html.erb (3.4ms)
+Completed 200 OK in 44ms (Views: 21.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/entries" for 10.0.2.2 at 2015-05-21 15:51:57 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EntriesController#index as HTML
+  [1m[35mEntry Load (0.2ms)[0m  SELECT `entries`.* FROM `entries`
+  Rendered entries/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 1837ms (Views: 1820.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/scaffolds.self-388dfdba3afdac190d181cf68e09a3ed709ba41a74583ec98792d453a0ceab89.css?body=1" for 10.0.2.2 at 2015-05-21 15:51:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 10.0.2.2 at 2015-05-21 15:51:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 10.0.2.2 at 2015-05-21 15:51:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 10.0.2.2 at 2015-05-21 15:51:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 10.0.2.2 at 2015-05-21 15:51:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 10.0.2.2 at 2015-05-21 15:51:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/entries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 10.0.2.2 at 2015-05-21 15:51:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 10.0.2.2 at 2015-05-21 15:51:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/entries/new" for 10.0.2.2 at 2015-05-21 15:52:01 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EntriesController#new as HTML
+  Rendered entries/_form.html.erb (45.2ms)
+  Rendered entries/new.html.erb within layouts/application (68.5ms)
+Completed 200 OK in 320ms (Views: 315.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/entries" for 10.0.2.2 at 2015-05-21 15:52:10 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HGkBuJWXj+rMIn8BZ/fxSy06xSzZzcj0rgNGaR+3aOslP0MvWmHyIPWg5vQNZK+begVC4tcdc8XAsHHOqsKomw==", "entry"=>{"title"=>"abc", "body"=>"body"}, "commit"=>"Create Entry"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.7ms)[0m  INSERT INTO `entries` (`title`, `body`, `created_at`, `updated_at`) VALUES ('abc', 'body', '2015-05-21 15:52:10', '2015-05-21 15:52:10')
+  [1m[36m (9.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:13000/entries/1
+Completed 302 Found in 21ms (ActiveRecord: 12.3ms)
+
+
+Started GET "/entries/1" for 10.0.2.2 at 2015-05-21 15:52:10 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEntry Load (1.1ms)[0m  SELECT  `entries`.* FROM `entries` WHERE `entries`.`id` = 1 LIMIT 1
+  Rendered entries/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 301ms (Views: 275.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/entries" for 10.0.2.2 at 2015-05-21 15:52:13 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EntriesController#index as HTML
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT `entries`.* FROM `entries`[0m
+  Rendered entries/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 237ms (Views: 236.1ms | ActiveRecord: 0.2ms)
