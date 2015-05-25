@@ -16,6 +16,9 @@ resources {"firewall":
   purge => true
 }
 
+resources {"puppetlabs-mysql"}
+resources {"puppetlabs-postgresql"}
+
 Firewall {
   require => Class['fw::pre'],
   before => Class['fw::post'],
