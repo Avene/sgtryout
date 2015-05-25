@@ -6,3 +6,4 @@ tmp/
 .keep
 .log
 .bundle/
+log/development.log
